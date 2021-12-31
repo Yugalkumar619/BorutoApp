@@ -5,9 +5,9 @@ import androidx.room.PrimaryKey
 import com.example.borutoapp.util.Constants.HERO_REMOTE_KEY_DATABASE_TABLE
 
 @Entity(tableName = HERO_REMOTE_KEY_DATABASE_TABLE)
-class HeroRemoteKey (
+ data class HeroRemoteKey (
     @PrimaryKey(autoGenerate = false)
     val id: Int,
-    val prevKey: Int?,
-    val nextKey: Int?
+    val prevPage: Int?,
+    val nextPage: Int?
 )
