@@ -1,5 +1,6 @@
 package com.example.borutoapp.di
 
+import androidx.paging.ExperimentalPagingApi
 import com.example.borutoapp.data.local.BorutoDatabase
 import com.example.borutoapp.data.remote.BorutoApi
 import com.example.borutoapp.data.repository.RemoteDataSourceImpl
@@ -18,6 +19,7 @@ import retrofit2.Retrofit
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
+@ExperimentalPagingApi
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {

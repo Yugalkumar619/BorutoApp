@@ -42,7 +42,7 @@ class HeroRemoteMediator @Inject constructor(
                        ?: return MediatorResult.Success(
                            endOfPaginationReached = remoteKeys != null
                        )
-                   null
+                   nextPage
                }
            }
             val response = borutoApi.getAllHeroes(page = page)
@@ -53,12 +53,12 @@ class HeroRemoteMediator @Inject constructor(
                         heroRemoteKeysDao.deleteAllRemoteKeys()
                     }
                     val prevPage = response.prevPage
-                    val nextpage = response.nextPage
+                    val nextPage = response.nextPage
                     val keys = response.heroes.map { hero ->
                         HeroRemoteKeys(
                             id = hero.id,
                             prevPage = prevPage,
-                            nextPage = nextpage
+                            nextPage = nextPage
                         )
                     }
                     heroRemoteKeysDao.addAllRemoteKeys(heroRemoteKeys = keys)

@@ -12,6 +12,7 @@ import com.example.borutoapp.domain.repository.RemoteDataSource
 import com.example.borutoapp.util.Constants.ITEMS_PER_PAGE
 import kotlinx.coroutines.flow.Flow
 
+@ExperimentalPagingApi
 class RemoteDataSourceImpl(
     private val borutoApi: BorutoApi,
     private val borutoDatabase: BorutoDatabase
@@ -19,7 +20,7 @@ class RemoteDataSourceImpl(
 
     private val heroDao = borutoDatabase.heroDao()
 
-    @ExperimentalPagingApi
+
     override fun getAllHeroes(): Flow<PagingData<Hero>> {
         val pagingSourceFactory = { heroDao.getAllHeroes()}
         return Pager(
