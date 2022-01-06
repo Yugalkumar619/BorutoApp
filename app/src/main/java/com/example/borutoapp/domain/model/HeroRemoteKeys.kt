@@ -9,5 +9,6 @@ import com.example.borutoapp.util.Constants.HERO_REMOTE_KEYS_DATABASE_TABLE
     @PrimaryKey(autoGenerate = false)
     val id: Int,
     val prevPage: Int?,
-    val nextPage: Int?
+    val nextPage: Int?,
+    val lastUpdated: Long?
 )
