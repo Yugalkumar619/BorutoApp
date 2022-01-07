@@ -27,7 +27,7 @@ class HeroRemoteMediator @Inject constructor(
     override suspend fun initialize(): InitializeAction {
         val currentTime = System.currentTimeMillis()
         val lastUpdated = heroRemoteKeysDao.getRemoteKeys(heroId = 1)?.lastUpdated ?: 0L
-        val cacheTimeout = 5
+        val cacheTimeout = 1440
         Log.d("RemoteMediator","Current Time: ${parseMillis(currentTime)}")
         Log.d("RemoteMediator","Last Updated Time: ${parseMillis(lastUpdated)}")
 
